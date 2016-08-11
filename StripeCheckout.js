@@ -250,7 +250,10 @@ export default class ReactStripeCheckout extends React.Component {
   }
 
   componentWillUnmount() {
-    this.loadPromise.cancel();
+    if (this.loadPromise) {
+      this.loadPromise.cancel();
+    }
+
     if (ReactStripeCheckout.stripeHandler && this.state.open) {
       ReactStripeCheckout.stripeHandler.open({ closed: null });
       ReactStripeCheckout.stripeHandler.close();
