@@ -9,7 +9,6 @@
     "watch": "./node_modules/.bin/babel StripeCheckout.js --out-file ./dist/main.js --source-maps inline --watch",
     "clean": "rm -rf ./dist && mkdir ./dist",
     "build": "npm run clean && ./node_modules/.bin/babel StripeCheckout.js --out-file ./dist/main.js",
-    "preinstall": "npm run build",
     "version": "npm run build"
   },
   "babel": {
